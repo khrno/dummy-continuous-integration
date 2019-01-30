@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - mkdir jruby
+      - mkdir modyo
+      - mkdir bin
+  build:
+    commands:
+      - echo content-jruby-1 > jruby/file-1
+      - echo content-jruby-2 > jruby/file-2
+      - echo content-modyo-1 > modyo/file-1
+      - echo content-modyo-2 > modyo/file-2
+      - echo content-modyo-3 > modyo/file-3
+      - echo content-bin-1 > modyo/bin-1
+      - echo content-bin-2 > modyo/bin-2
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
+  base-directory: location
